@@ -1,0 +1,7 @@
+| Test Case ID | Test Scenario                    | Steps to Reproduce                                         | Expected Result                          | Status |
+| ------------ | -------------------------------- | ---------------------------------------------------------- | ---------------------------------------- | ------ |
+| BIIGFNL-1    | Navigate to gallery page         | Open the website and go to the image gallery               | Gallery page loads without issues        | ✅ Pass |
+| BIIGFNL-2    | Scroll through the gallery       | Scroll through the full list of gallery images             | All images load properly                 | ✅ Pass |
+| BIIGFNL-3    | Identify broken image issue      | Stop at the image that previously failed to load           | Image is visible and displayed correctly | ✅ Pass |
+| BIIGFNL-4    | Confirm image URL in source code | Inspect the broken image element and check its `src` value | Correct URL path should be visible       | ✅ Pass |
+| BIIGFNL-5    | Verify post-fix gallery behavior | Reload the gallery after the fix                           | All images remain stable and functional  | ✅ Pass |
