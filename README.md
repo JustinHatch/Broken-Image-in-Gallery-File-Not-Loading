@@ -1,75 +1,33 @@
-# 🖼️ Broken Image in Gallery – File Not Loading
+# Broken Image in Gallery — QA Demonstration
 
-This QA project documents and resolves a bug where one image fails to load in a web-based photo gallery. The bug was discovered during functional testing and has been successfully reproduced, fixed, and verified.
+An existing manual QA project demonstrating how to investigate an image-loading issue, inspect the image reference, document a defect, and verify a correction using Jira and TestRail.
 
----
+## Broken and fixed examples
 
-## 🐞 Bug Summary
+- [Broken gallery](broken_version.html): Photo 4 intentionally references the missing local file `missing-photo-4.jpg`.
+- [Fixed gallery](fixed_version.html): Photo 4 uses the existing working placeholder URL.
 
-- **Issue:** One image in the gallery does not display (shows a broken image icon).
-- **Cause:** The image source path was either incorrect or the image file was missing.
-- **Fix:** The image reference was corrected and tested in the browser.
+Open each file in a browser to compare the behavior. These are demonstration galleries using placeholder images, not the original client's photographs. The earlier broken example used `?text=Photo+4.jpg`, which changes placeholder text rather than causing a load failure. That example has been corrected; historical screenshots and project dates remain unchanged.
 
----
+## QA evidence
 
-## 🎯 Project Goal
+- [Original post-fix test-case results and scope notes](TestCases.md)
+- [TestRail case](Screenshots/broken%20image%20gala%201.png)
+- [TestRail expected result](Screenshots/broken%20image%20gala%202.png)
+- [TestRail failed result and passed retest](Screenshots/broken%20image%20gala%203.png)
+- [Jira backlog](Screenshots/Broken%20Image%20gallery%20Jira%20flow%201.png), [task flow](Screenshots/Broken%20Image%20gallery%20Jira%20flow%202.png), and [completion](Screenshots/Broken%20Image%20gallery%20Jira%20flow%203.png)
+- [Original gallery screenshot](Screenshots/image%20not%20loading.png)
 
-- Reproduce the broken image issue.
-- Identify the root cause of the broken link.
-- Implement a fix by correcting the image path or replacing the file.
-- Verify that the gallery loads all images correctly.
+Historical fail/pass entries belong to different stages of the investigation. They are not claims that every version or every current run passes.
 
----
+## Repository contents
 
-## 🧪 Test Cases
-
-| Test Case ID | Test Scenario                      | Steps to Reproduce                                           | Expected Result                         | Status |
-|--------------|-------------------------------------|--------------------------------------------------------------|------------------------------------------|--------|
-| TC-BIIG-001  | Navigate to gallery page            | Open gallery page in browser                                 | Page loads without errors                | ✅ Pass |
-| TC-BIIG-002  | Scroll through image set            | Scroll through all displayed images                          | All images render properly               | ✅ Pass |
-| TC-BIIG-003  | Identify broken image               | Stop at specific image that fails to render                  | All images should display correctly      | ❌ Fail |
-| TC-BIIG-004  | Verify image source path            | Inspect element in browser dev tools                         | Source should point to valid image file  | ❌ Fail |
-| TC-BIIG-005  | Fix broken image                    | Replace or correct broken image file                         | Image loads in browser                   | ✅ Pass |
-| TC-BIIG-006  | Re-verify full image gallery        | Reload and test all images again after fix                   | No broken images appear                  | ✅ Pass |
-
----
-
-## 📸 Screenshots
-
-Located in the `/screenshots` folder:
-- `broken_gallery_view.png`
-- `fixed_gallery_view.png`
-
-These demonstrate before/after results of the bug fix.
-
----
-
-## 🔧 Tools Used
-
-- **Browser** (Chrome) – for manual testing and inspection
-- **VS Code** – for editing HTML files
-- **Jira** – to track tasks and sprint flow
-- **GitHub** – for version control and documentation
-
----
-
-## 📁 Project Structure
-
-```
-BrokenImageGallery/
-├── broken_version/
-│   └── index.html       # Version with broken image
-├── fixed_version/
-│   └── index.html       # Version with bug fix applied
-├── screenshots/
-│   ├── broken_gallery_view.png
-│   └── fixed_gallery_view.png
-├── TestCases.md
-└── README.md
+```text
+broken_version.html
+fixed_version.html
+Screenshots/       # Original evidence; capitalization matches the directory
+TestCases.md       # Original post-fix results and demonstration notes
+README.md
 ```
 
----
-
-## ✅ Status
-
-All images are now loading correctly. The fix was implemented and all test cases have passed.
+Tools used: browser inspection, HTML editing, Jira, TestRail, and GitHub. Skills demonstrated: visual/functional testing, troubleshooting, defect documentation, and retesting. This is portfolio project experience.
